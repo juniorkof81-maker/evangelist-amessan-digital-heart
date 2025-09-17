@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Portfolio Évangéliste Jacques Amessan - Design System
+Couleurs spirituelles et élégantes - All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Divine Gold & Sacred Colors */
+    --background: 0 0% 98%;
+    --foreground: 220 25% 15%;
+
+    --divine-gold: 45 95% 58%;
+    --divine-gold-light: 48 100% 88%;
+    --divine-gold-dark: 40 85% 45%;
+    
+    --sacred-blue: 220 85% 25%;
+    --sacred-blue-light: 220 50% 85%;
+    --sacred-blue-dark: 220 90% 15%;
+    
+    --pure-white: 0 0% 100%;
+    --soft-cream: 45 50% 97%;
+    --warm-gray: 220 15% 95%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 95% 58%;
+    --primary-foreground: 220 90% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 50% 85%;
+    --secondary-foreground: 220 90% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 85% 25%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 45 95% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Gradients */
+    --gradient-divine: linear-gradient(135deg, hsl(var(--divine-gold)), hsl(var(--divine-gold-dark)));
+    --gradient-sacred: linear-gradient(135deg, hsl(var(--sacred-blue)), hsl(var(--sacred-blue-dark)));
+    --gradient-heavenly: linear-gradient(180deg, hsl(var(--divine-gold-light)), hsl(var(--pure-white)));
+    
+    /* Shadows */
+    --shadow-divine: 0 10px 40px -10px hsl(var(--divine-gold) / 0.3);
+    --shadow-sacred: 0 10px 40px -10px hsl(var(--sacred-blue) / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(220 25% 15% / 0.1);
+
+    /* Transitions */
+    --transition-divine: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +126,69 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Educational Banner */
+  .educational-banner {
+    @apply bg-red-600 text-white text-center py-2 text-sm font-medium;
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-heavenly);
+  }
+
+  /* Divine Button Variants */
+  .btn-divine {
+    @apply bg-gradient-to-r from-primary to-primary/80 text-primary-foreground 
+           shadow-[var(--shadow-divine)] hover:shadow-[var(--shadow-divine)] 
+           transition-[var(--transition-divine)] hover:scale-105;
+  }
+
+  .btn-sacred {
+    @apply bg-gradient-to-r from-accent to-accent/80 text-accent-foreground
+           shadow-[var(--shadow-sacred)] hover:shadow-[var(--shadow-sacred)]
+           transition-[var(--transition-divine)] hover:scale-105;
+  }
+
+  /* Gallery Effects */
+  .gallery-item {
+    @apply transition-[var(--transition-divine)] hover:scale-105 
+           hover:shadow-[var(--shadow-soft)] cursor-pointer rounded-lg overflow-hidden;
+  }
+
+  /* Audio Player Styles */
+  .audio-player {
+    @apply bg-gradient-to-r from-secondary/50 to-secondary/30 
+           backdrop-blur-sm border border-border/50 rounded-xl 
+           shadow-[var(--shadow-soft)];
+  }
+
+  /* Contact Form */
+  .contact-form {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 
+           rounded-xl shadow-[var(--shadow-soft)] p-6;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-primary 
+           transition-[var(--transition-divine)] font-medium
+           after:content-[''] after:absolute after:w-full after:scale-x-0 
+           after:h-0.5 after:bottom-0 after:left-0 after:bg-primary 
+           after:origin-bottom-right after:transition-transform after:duration-300 
+           hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Scroll animations */
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
   }
 }

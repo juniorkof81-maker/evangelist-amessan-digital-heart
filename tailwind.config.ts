@@ -47,6 +47,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom spiritual colors
+        divine: {
+          gold: "hsl(var(--divine-gold))",
+          light: "hsl(var(--divine-gold-light))",
+          dark: "hsl(var(--divine-gold-dark))",
+        },
+        sacred: {
+          blue: "hsl(var(--sacred-blue))",
+          light: "hsl(var(--sacred-blue-light))",
+          dark: "hsl(var(--sacred-blue-dark))",
+        },
+        pure: {
+          white: "hsl(var(--pure-white))",
+          cream: "hsl(var(--soft-cream))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

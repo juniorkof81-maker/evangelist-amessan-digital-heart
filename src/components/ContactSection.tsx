@@ -214,16 +214,22 @@ const ContactSection = () => {
 
                   <Button
                     onClick={() => {
-                      toast({
-                        title: "Calendly à configurer",
-                        description: "Intégration Calendly requise pour la prise de rendez-vous",
-                      });
+                      // En attente de l'URL Calendly de l'utilisateur
+                      const calendlyUrl = ""; // À remplir avec l'URL fournie par l'utilisateur
+                      if (calendlyUrl) {
+                        window.open(calendlyUrl, '_blank');
+                      } else {
+                        toast({
+                          title: "Configuration requise",
+                          description: "Veuillez configurer votre URL Calendly pour activer les rendez-vous en ligne.",
+                        });
+                      }
                     }}
                     variant="outline"
-                    className="w-full justify-start border-2"
+                    className="w-full justify-start border-2 hover:border-primary hover:bg-primary/5"
                   >
                     <Calendar className="w-5 h-5 mr-3" />
-                    Prendre Rendez-vous
+                    Prendre Rendez-vous Spirituel
                   </Button>
                 </div>
 

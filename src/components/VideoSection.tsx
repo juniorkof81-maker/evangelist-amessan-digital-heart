@@ -1,13 +1,28 @@
 import { Play } from 'lucide-react';
 
 const VideoSection = () => {
-  // Placeholder video data
+  // Vidéos du canal YouTube "La Maison de Sagesse"
   const videos = [
     {
-      id: "dQw4w9WgXcQ", // Placeholder YouTube ID
-      title: "Sermon : La Foi qui Transforme",
-      description: "Un message puissant sur la foi et la transformation spirituelle.",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+      id: "example1", // À remplacer par de vraies URLs YouTube du canal @lamaisondesagesse
+      title: "Puiser la Sagesse des Proverbes - Session Matinale",
+      description: "Session d'étude biblique matinale avec l'Évangéliste Jacques Amessan, tous les mardis-vendredis à 04h45 GMT.",
+      thumbnail: "https://img.youtube.com/vi/example1/maxresdefault.jpg",
+      channelUrl: "https://www.youtube.com/@lamaisondesagesse"
+    },
+    {
+      id: "example2",
+      title: "Enseignement sur la Patience et la Prière",
+      description: "Message inspirant sur l'importance de la patience et du pouvoir de la prière dans la vie chrétienne.",
+      thumbnail: "https://img.youtube.com/vi/example2/maxresdefault.jpg",
+      channelUrl: "https://www.youtube.com/@lamaisondesagesse"
+    },
+    {
+      id: "example3",
+      title: "Veillée de Prière avec le Collectif des Frères en Christ",
+      description: "Moment de prière et d'intercession avec le Collectif des Frères en Christ à Abidjan.",
+      thumbnail: "https://img.youtube.com/vi/example3/maxresdefault.jpg",
+      channelUrl: "https://www.youtube.com/@lamaisondesagesse"
     }
   ];
 
@@ -31,43 +46,61 @@ const VideoSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {videos.map((video, index) => (
             <div key={index} className="fade-in">
-              <div className="bg-card rounded-xl overflow-hidden shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-divine)] transition-all duration-300">
+              <div className="bg-card rounded-xl overflow-hidden shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-divine)] transition-all duration-300 group">
                 <div 
-                  className="relative group cursor-pointer"
+                  className="relative cursor-pointer"
                   onClick={() => handleVideoClick(video.id)}
                 >
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      <Play size={32} />
+                  <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                    <div className="text-center">
+                      <Play size={48} className="mx-auto mb-3 text-primary opacity-70" />
+                      <p className="text-sm text-muted-foreground">Cliquez pour voir sur YouTube</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                      <Play size={24} />
                     </div>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">{video.title}</h3>
-                  <p className="text-muted-foreground">{video.description}</p>
+                  <h3 className="text-lg font-semibold mb-3 line-clamp-2">{video.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{video.description}</p>
+                  <a 
+                    href={video.channelUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors text-xs font-medium"
+                  >
+                    🎥 Chaîne: La Maison de Sagesse
+                  </a>
                 </div>
               </div>
             </div>
           ))}
-          
-          {/* Placeholder for more videos */}
-          <div className="bg-card/50 border-2 border-dashed border-muted rounded-xl p-8 text-center fade-in">
-            <div className="text-muted-foreground">
-              <Play size={48} className="mx-auto mb-4 opacity-50" />
-              <p className="text-lg mb-2">Plus de vidéos à venir</p>
-              <p className="text-sm">
-                Intégration YouTube ou fichiers locaux à configurer
-              </p>
-            </div>
+        </div>
+
+        {/* Canal YouTube Info */}
+        <div className="mt-12 text-center">
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 max-w-2xl mx-auto border border-primary/20">
+            <h3 className="text-xl font-semibold mb-4">🎬 Chaîne YouTube Officielle</h3>
+            <p className="text-muted-foreground mb-6">
+              Abonnez-vous à <strong>"La Maison de Sagesse"</strong> pour ne manquer aucun enseignement spirituel, 
+              session de prière et moment d'inspiration avec l'Évangéliste Jacques Amessan.
+            </p>
+            <a 
+              href="https://www.youtube.com/@lamaisondesagesse" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-divine inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300"
+            >
+              <Play size={20} />
+              Visiter la Chaîne YouTube
+            </a>
           </div>
         </div>
 

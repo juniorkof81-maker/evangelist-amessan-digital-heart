@@ -2,10 +2,15 @@ import { useEffect } from 'react';
 import EducationalBanner from '@/components/EducationalBanner';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import StatsSection from '@/components/StatsSection';
 import Gallery from '@/components/Gallery';
 import MusicSection from '@/components/MusicSection';
 import VideoSection from '@/components/VideoSection';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import FAQSection from '@/components/FAQSection';
 import ContactSection from '@/components/ContactSection';
+import ChatBot from '@/components/ChatBot';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   useEffect(() => {
@@ -39,11 +44,18 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <StatsSection />
         <Gallery />
         <MusicSection />
         <VideoSection />
+        <TestimonialsCarousel />
+        <FAQSection />
         <ContactSection />
       </main>
+      
+      {/* Floating Action Buttons */}
+      <ChatBot />
+      <WhatsAppButton />
       
       {/* Footer */}
       <footer className="bg-accent text-accent-foreground py-12">

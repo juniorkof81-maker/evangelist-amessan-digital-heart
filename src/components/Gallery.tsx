@@ -4,21 +4,38 @@ import churchInterior from '@/assets/church-interior.jpg';
 import gospelChoir from '@/assets/gospel-choir.jpg';
 import crossSunset from '@/assets/cross-sunset.jpg';
 import bibleStudy from '@/assets/bible-study.jpg';
-import evangelistHero from '@/assets/evangelist-hero.jpg';
+import jacquesAmes1 from '@/assets/jacques-amessan-1.jpg';
+import jacquesAmes2 from '@/assets/jacques-amessan-2.jpg';
+import jacquesAmes3 from '@/assets/jacques-amessan-3.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
     {
+      src: jacquesAmes1,
+      alt: "Évangéliste Jacques Amessan - Portrait officiel",
+      title: "Évangéliste Jacques Amessan"
+    },
+    {
+      src: jacquesAmes2,
+      alt: "Jacques Amessan lors d'un enseignement",
+      title: "Enseignement Spirituel"
+    },
+    {
+      src: jacquesAmes3,
+      alt: "La Croissance Spirituelle de Jésus-Christ homme",
+      title: "Conférence: La Croissance Spirituelle"
+    },
+    {
       src: churchInterior,
-      alt: "Intérieur de l'église - Atmosphère spirituelle",
-      title: "Sanctuaire de Prière"
+      alt: "Intérieur de l'église - Service avec le Collectif",
+      title: "Service avec le Collectif des Frères"
     },
     {
       src: gospelChoir,
-      alt: "Chorale gospel en célébration",
-      title: "Louange et Adoration"
+      alt: "Troupe des Prophètes Musiciens (TPM)",
+      title: "Collaboration avec TPM"
     },
     {
       src: crossSunset,
@@ -27,13 +44,8 @@ const Gallery = () => {
     },
     {
       src: bibleStudy,
-      alt: "Bible ouverte avec lumière douce",
-      title: "Étude des Écritures"
-    },
-    {
-      src: evangelistHero,
-      alt: "Portrait de l'Évangéliste Jacques Amessan",
-      title: "Portrait Officiel"
+      alt: "Session Puiser la sagesse des proverbes",
+      title: "Étude Matinale des Proverbes"
     }
   ];
 

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
-import evangelistHero from '@/assets/evangelist-hero.jpg';
+import heroImage from '@/assets/jacques-amessan-1.jpg';
 
 const HeroSection = () => {
   const scrollToGallery = () => {
@@ -23,8 +23,14 @@ const HeroSection = () => {
               </span>
             </h1>
             
+            <div className="mb-4 fade-in">
+              <span className="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium">
+                ✨ Sessions "Puiser la sagesse des proverbes" - Mardi-Vendredi 04h45 GMT
+              </span>
+            </div>
+            
             <p className="text-lg md:text-xl text-muted-foreground mb-4">
-              Serviteur de Dieu • Côte d'Ivoire
+              Serviteur de Dieu avec le <strong>Collectif des Frères en Christ</strong> • Côte d'Ivoire
             </p>
             
             <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 mb-8 border border-border/50">
@@ -62,7 +68,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl blur-lg"></div>
               <img
-                src={evangelistHero}
+                src={heroImage}
                 alt="Évangéliste Jacques Amessan"
                 className="relative w-full h-auto rounded-xl shadow-[var(--shadow-divine)] object-cover"
               />
